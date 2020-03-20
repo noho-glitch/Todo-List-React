@@ -14,6 +14,8 @@ class NewTodoForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
+    // const newTask = { ...this.state }
+    this.props.createTask(this.state)
     this.setState({
       task: ""
     });
@@ -31,6 +33,7 @@ class NewTodoForm extends Component {
             onChange={this.handleChange}
             id="task"
           />
+          <button>Add Task</button>
         </div>
       </form>
     );
